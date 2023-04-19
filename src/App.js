@@ -1,12 +1,11 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import Hnapi from './components/Hnapi';
+import Body from './components/Body';
 
 function App() {
   return (
     <div className="App">
       <h1>Hacker News Website</h1>
-      <Hnapi />
+      <Body />
     </div>
   );
 }
