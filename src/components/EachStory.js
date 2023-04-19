@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+
 // This function will fetch each story from the HackerNews url
-export default function Fetchstory({id}) {
+export default function EachStory({id}) {
 // console.log("prop:", id);
+
 const [story, setStory] = useState({});
 
 useEffect(() => {
@@ -11,7 +13,6 @@ useEffect(() => {
             // console.log("url is ", url)
 
             const getData = await
-            // fetch(` https://hacker-news.firebaseio.com/v0/item/35624544.json`);
             fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
             if (!getData.ok) {
                 throw new Error (`Fetch Error ${getData.status}`)
@@ -24,7 +25,7 @@ useEffect(() => {
         } 
     }
     getStory ();
-}, [])
+},[])
 
 // useEffect (() => {
 // getStory();
