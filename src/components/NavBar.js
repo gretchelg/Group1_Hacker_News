@@ -7,7 +7,7 @@ export default function NavBar( { onHomeClicked, onSearchClicked}) {
             <table  border = "0"  width="100%" height="10px"  bgcolor="#ff6600" >
             <tr>
             < td width= "18px" padding-right="4px">
-                     <img src = "./image/logo.png" width="100%" height="100%" border="1px white solid"/> 
+                <img src = "./image/logo.png" width="100%" height="100%" border="1px white solid"/> 
             </td>
                 <span className ="pagetop">
                     <b className ="hname">
