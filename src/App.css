@@ -1,7 +1,12 @@
-/* .App {
-  text-align: center;
-} */
-
+* {
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, sans-serif;
+  /* font-weight: 400; */
+  font-size: 12px;
+}
+  
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,6 +41,28 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  width: 100%;
+}
+  
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  min-height: 90vh;
+  background-color: #f2f0eb;
+}
+
+ol {
+  padding: 10px;  
+  padding-left: 30px;
+}
+
+li {
+  padding: 5px;
+}
+
 .topsel a:visited {
   color: #ffffff;
 }
@@ -50,4 +77,32 @@ a:link {
 }
 a:hover {
   color: blue;
+}
+.hnlogo {
+  border:1px solid #ffffff;
+}
+
+a.subText {
+  text-decoration: underline;
+  font-size: 10px;
+}
+p.subText {
+  padding: 3px;
+  font-size: 10px;
+}
+a.subText2 {
+  text-decoration: none;
+  font-size: 10px;
+}
+
+input {
+  margin: 10px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid black;
+  background: #fff;
+}
+button {
+  height: 22px;
+  padding: 2px;
 }
