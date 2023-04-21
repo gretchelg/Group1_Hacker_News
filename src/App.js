@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <div className='container'>
         <div className='wrapper'>
-            <NavBar onHomeClicked={setActivePageToHome} onSearchClicked={setActivePageToSearch} />
+            <NavBar />
             <div>
                 {
                 activePage === PAGE_HOME ? <Home />
