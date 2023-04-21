@@ -14,6 +14,7 @@ useEffect(() => {
         // console.log("url is ", url)
 
         try {
+            // 
             const getData = await fetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
             if (!getData.ok) {
                 console.log("Fetch failed: NOT OK");

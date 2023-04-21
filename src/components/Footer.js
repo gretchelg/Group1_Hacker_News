@@ -6,7 +6,7 @@ export default function Footer({ onSearchBtnClicked }) {
 
     return (
         <div>
-            <h1>THIS IS A FOOTER</h1>
+            
             <input type="text" placeholder="Search something" 
                 value={query} 
                 onChange={e => setQuery(e.target.value)} 
