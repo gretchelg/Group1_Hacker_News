@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +35,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+.topsel a:visited {
+  color: #ffffff;
+}
+
+.pagetop a:visited {
+  color: #000000;
+}
+
+a:link {
+  color: #000000;
+  text-decoration: none;
 }
