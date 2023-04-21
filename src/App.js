@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hacker News Website</h1>
+      
       <NavBar onHomeClicked={setActivePageToHome} onSearchClicked={setActivePageToSearch} />
       <div>
             {
