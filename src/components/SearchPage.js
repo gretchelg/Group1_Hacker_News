@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 export default function SearchPage({query}) {
 
 const [searchResult, setSearchResult] = useState({ hits: []});
+const [ isLoading, setIsLoading] = useState(true);
 
 
 useEffect(() => {
@@ -18,31 +19,45 @@ useEffect(() => {
             const getData = await fetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
             if (!getData.ok) {
                 console.log("Fetch failed: NOT OK");
-                throw new Error (`Fetch Error ${getData.status}`)
+                throw new Error (`Data Not Found ${getData.status}`)
             }
 
             const data = await getData.json();
             setSearchResult(data);
-
+            setIsLoading(false);
             console.log("Search Result:", data);
         }   catch (error) {
             console.log(error);
         } 
     }
     searchQuery ();
-}, [])
+}, [query])
 
 return (
     <div>
-        <ol>
+        {isLoading ? (<span>.....</span>)
+        :
+        searchResult.hits.length === 0 ? 
+        (
+        <h2>We found no stories matching ${query}</h2>
+        )
+        : (
+            <ol>
             { searchResult.hits.map(result => 
                 <li key={result.objectID}>
                     <a href={result.url}>{result.title}</a>
-                    <p>{`${result.points} points by ${result.author} ${result.created_at} ${result.num_comments}`}</p>
+                    <p><a className="subText2" href="">{result.points}</a> |
+                    <a className="subText2" href=""> {result.author}</a> |
+                    <a className="subText2" href=""> {result.created_at}</a> |  
+                    <a className="subText2" href=""> {result.num_comments} comments</a>
+                    </p>
                 </li>
             )
             }
         </ol>
+        )
+        }
+        
     </div>
 )
 }

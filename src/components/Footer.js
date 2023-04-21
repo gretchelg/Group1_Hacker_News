@@ -7,11 +7,14 @@ export default function Footer({ onSearchBtnClicked }) {
     return (
         <div>
             
-            <input type="text" placeholder="Search something" 
+            <input type="text" placeholder="Search stories"
                 value={query} 
                 onChange={e => setQuery(e.target.value)} 
             />
-            <button onClick={() => onSearchBtnClicked(query)}>Search</button>
+            <button onClick={() => {
+                onSearchBtnClicked(query)
+                setQuery("")
+            }}>Search</button>
         </div>
     )
 }

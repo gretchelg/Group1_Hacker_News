@@ -35,11 +35,12 @@ useEffect(() => {
 return (
     <div>
         <li>
+        {/* <a href={story.url}>{story.title}  ({story.url})</a> */}
             <a href={story.url}>{story.title}</a>
-            <p>{`${story.score} points by `}
-            <a href="">{story.by}</a> | 
-            <a href=""> hide </a> |
-            <a href=""> {story.descendants} comments</a>
+            <p className="subText">{`${story.score} points by `}
+            <a className="subText" href="">{story.by}</a> | 
+            <a className="subText2" href=""> hide </a> |
+            <a className="subText" href=""> {story.descendants} comments</a>
             </p>
 
             {/* <p>{`${story.score} points by ${story.by} | hide |`}</p> */}
