@@ -12,6 +12,7 @@ useEffect(() => {
             // const url = `https://hacker-news.firebaseio.com/v0/item/${id}.json`
             // console.log("url is ", url)
 
+            // fetch the story
             const getData = await
             fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
             if (!getData.ok) {
@@ -35,7 +36,13 @@ return (
     <div>
         <li>
             <a href={story.url}>{story.title}</a>
-            <p>{`${story.score} points by ${story.by} | hide |`}</p>
+            <p>{`${story.score} points by `}
+            <a href="">{story.by}</a> | 
+            <a href=""> hide </a> |
+            <a href=""> {story.descendants} comments</a>
+            </p>
+
+            {/* <p>{`${story.score} points by ${story.by} | hide |`}</p> */}
         </li>
     </div>
 )

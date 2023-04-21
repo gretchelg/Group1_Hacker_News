@@ -26,7 +26,7 @@ export default function Home() {
 
     return (
         <div>
-            <h1>THIS IS MY HOMEPAGE</h1>
+           
             <ol>
             {/* {post.map(el => <EachStory id={el} /> )} */}
             {post.filter((el, idx) => idx < 50).map(el => <EachStory key={el} id={el} /> )}
