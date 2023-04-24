@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import BeatLoader from "react-spinners/BeatLoader";
 // This function will return the result of a Search query
 export default function SearchPage({query}) {
 
@@ -9,11 +9,11 @@ const [ isLoading, setIsLoading] = useState(true);
 
 useEffect(() => {
     console.log("INFO: useEffect starting...");
-
+    setIsLoading(true);
     const searchQuery = async ()=> {            
         // const url = `http://hn.algolia.com/api/v1/search?query=${query}`;
         // console.log("url is ", url)
-
+        
         try {
             // 
             const getData = await fetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
@@ -35,7 +35,13 @@ useEffect(() => {
 
 return (
     <div>
-        {isLoading ? (<span>.....</span>)
+{/* spiner */}
+        {isLoading ? (<BeatLoader
+        color="#f5a214"
+        loading={isLoading}
+        size={50}
+        aria-label="Loading Spinner"
+        data-testid="loader"/>)
         :
         searchResult.hits.length === 0 ? 
         (
