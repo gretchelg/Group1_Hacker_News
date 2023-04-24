@@ -21,6 +21,7 @@ function App() {
   }
 
   function searchForQuery(query) {
+    console.log("App.js.searchForQuery() ran. query =", query)
     setLastQuery(query)
     // setActivePage(PAGE_SEARCH)
     setActivePageToSearch()
@@ -28,17 +29,20 @@ function App() {
 
   return (
     <div className="App">
-      
-      <NavBar onHomeClicked={setActivePageToHome} onSearchClicked={setActivePageToSearch} />
-      <div>
-            {
+      <div className='container'>
+        <div className='wrapper'>
+            <NavBar />
+            <div>
+                {
                 activePage === PAGE_HOME ? <Home />
                     : activePage === PAGE_SEARCH ? <SearchPage query={lastQuery} />
                     : <Home />
-            }
-        </div>
+                }
+            </div>
+            <Footer onSearchBtnClicked={searchForQuery} />
 
-      <Footer onSearchBtnClicked={searchForQuery} />
+        </div>
+      </div>
     </div>
   );
 }
