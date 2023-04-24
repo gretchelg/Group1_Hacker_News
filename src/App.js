@@ -34,7 +34,7 @@ function App() {
             <NavBar />
             <div>
                 {
-                activePage === PAGE_HOME ? <Home />
+                activePage === PAGE_HOME ? <Home storyPerPage={10} />
                     : activePage === PAGE_SEARCH ? <SearchPage query={lastQuery} />
                     : <Home />
                 }
